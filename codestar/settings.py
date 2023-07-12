@@ -34,7 +34,7 @@ DEBUG = True
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['garys-blog.herokuapp.com/', '8000-garys007-ithinktherefor-33bxdf9o5rs.ws-eu101.gitpod.io']
+ALLOWED_HOSTS = ['garys-blog.herokuapp.com', '8000-garys007-ithinktherefor-33bxdf9o5rs.ws-eu101.gitpod.io']
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-garys007-ithinktherefor-33bxdf9o5rs.ws-eu101.gitpod.io']
 
