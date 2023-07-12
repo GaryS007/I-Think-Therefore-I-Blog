@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-
+from django.contrib.messages import constants as messages
 if os.path.isfile('env.py'):
     import env
 
@@ -30,9 +30,11 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['https://garys-blog.herokuapp.com/', '8000-garys007-ithinktherefor-jad1db6e4cf.ws-eu99.gitpod.io']
+ALLOWED_HOSTS = ['https://garys-blog.herokuapp.com/', '8000-garys007-ithinktherefor-33bxdf9o5rs.ws-eu101.gitpod.io']
+
+CSRF_TRUSTED_ORIGINS = ['https://8000-garys007-ithinktherefor-33bxdf9o5rs.ws-eu101.gitpod.io']
 
 
 # Application definition
@@ -51,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
+    'crispy_forms',
     'blog',
 ]
 
@@ -58,6 +61,17 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
